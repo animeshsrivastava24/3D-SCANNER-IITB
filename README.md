@@ -1,8 +1,9 @@
 # ABOUT:
-This project is being undertaken under the FOSSEE organisation of IIT BOMBAY under MHRD under the guidance of Dr.D B         Phatak(Patron),Rajesh Kushalkar(Manager, FOSSEE Projects) and Akshay Chipkar(Project Mentor).The project aims at developing open source hardware and software for 3D scanning of objects.
+This a project of FOSSEE, IIT Bombay funded by MHRD, GoI under the guidance of Prof.D B Phatak(Patron),Rajesh Kushalkar(Project Manager, IDL, IIT Bombay) and Akshay Chipkar(Project Mentor).
+The project aims at developing open source hardware and software for 3D scanning of objects.
 
 # DESCRIPTION:
-This project is undertaken by four interns during the Summer of 2017 under the Ekalavya Project sponsored by the MHRD,India.
+The project is undertaken by four interns during the Summer of 2017 under the Ekalavya Summer Internship sponsored by the MHRD,India at Integrated Development Lab, Department of Computer Science and Engineering, IIT Bombay.
   ##  1. Sagar Satapathy, NIT Rourkela
   ##  2. Animesh Srivastava, NIT Hamirpur
   ##  3. Anchal Singh, NIT Uttarakhand
