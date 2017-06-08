@@ -1,12 +1,12 @@
-#ABOUT:
-  This project is being undertaken under the FOSSEE organisation of IIT BOMBAY under MHRD under the guidance of Dr.D B         Phatak(Patron),Rajesh Kushalkar(FOSSEE Manager) and Akshay Chipkar(Project Mentor).The project aims at creating an Open Source 3D Scanner for the the Community. 3D Scanner can be used to scan any 3D object using Open Source Hardware and Software with miminum cost.  
+# ABOUT:
+This project is being undertaken under the FOSSEE organisation of IIT BOMBAY under MHRD under the guidance of Dr.D B         Phatak(Patron),Rajesh Kushalkar(FOSSEE Manager) and Akshay Chipkar(Project Mentor).The project aims at creating an Open Source 3D Scanner for the the Community. 3D Scanner can be used to scan any 3D object using Open Source Hardware and Software with miminum cost.  
 
-#DESCRIPTION:
-  This project is undertaken by four interns during the Summer of 2017 under the Ekalavya Project sponsored by the MHRD,India.
+# DESCRIPTION:
+This project is undertaken by four interns during the Summer of 2017 under the Ekalavya Project sponsored by the MHRD,India.
   
-#CONTENTS:
-  1.Hardware Used:
-    1.1 Arduino UNO:          
+# CONTENTS:
+  ## 1.Hardware Used:
+    ### 1.1 Arduino UNO:          
       Microcontroller-ATmega328
       Operating Voltage- 5V
       Input Voltage (recommended)- 7-12V
@@ -20,7 +20,7 @@
       EEPROM- 1 KB (ATmega328)
       Clock Speed- 16 MHz
 
-    1.2 Laser Module(INT 2549):
+    ### 1.2 Laser Module(INT 2549):
       Output Power:
       Min:2.5mW  
       Typical:3.0mW 
@@ -38,7 +38,7 @@
       Focused Dot Width:
         < 2mm spotting 3 meters away
     
-    1.3 Stepper Motor(28BYJ-48):
+    ### 1.3 Stepper Motor(28BYJ-48):
         Rated voltage ： 5V DC
         Number of Phase ： 4
         Speed Variation Ratio ： 1/64
@@ -53,28 +53,28 @@
         Pull in torque  : 450 gf.cm
         Insulated resistance : >10MΩ(500V)
 
-  2.Open Source Technologies Used:
-    2.1 OpenCV 3.2.0
-    2.2 OpenGL 
-    2.3 Python 2.7
-    2.4 Numpy 
-    2.5 Matplotlib
-    2.6 Pygame 
-    2.7 Tkinter 
-    2.8 Python Image Library
-    2.9 Py Serial 
+  ## 2.Open Source Technologies Used:
+    ### 2.1 OpenCV 3.2.0
+    ### 2.2 OpenGL 
+    ### 2.3 Python 2.7
+    ### 2.4 Numpy 
+    ### 2.5 Matplotlib
+    ### 2.6 Pygame 
+    ### 2.7 Tkinter 
+    ### 2.8 Python Imaging Library
+    ### 2.9 Pyserial 
   
 
-#INSTALLATION
+# INSTALLATION
 
-#USAGE:
+# USAGE:
   
 
-#CONTRIBUTING
+# CONTRIBUTING
 
-#CREDITS
+# CREDITS
 
-#LICENSE
+# LICENSE
 MIT License
 
 Copyright (c) 2017 Team SAAS
