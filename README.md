@@ -1,28 +1,24 @@
-#ABOUT
-  This project is being undertaken under the FOSSEE organisation of IIT BOMBMAY under MHRD under the guidance of Dr.D B Phatak(Patron),Rajesh Kushalkar(FOSSEE Manager) and Akshay Chipkar(Project Mentor).The project aims at creating an Open Source 3D Scanner for the the Community. 3D Scanner can be used to scan any 3D object using Open Source Hardware and Software with miminum cost.  
+#ABOUT:
+  This project is being undertaken under the FOSSEE organisation of IIT BOMBMAY under MHRD under the guidance of Dr.D B         Phatak(Patron),Rajesh Kushalkar(FOSSEE Manager) and Akshay Chipkar(Project Mentor).The project aims at creating an Open Source 3D Scanner for the the Community. 3D Scanner can be used to scan any 3D object using Open Source Hardware and Software with miminum cost.  
 
-#DESCRIPTION
+#DESCRIPTION:
   This project is undertaken by four interns during the Summer of 2017 under the Ekalavya Project sponsored by the MHRD,India.
-#CONTRIBUTORS:
-  1.
-  2.
-  3.
-  4.
-#CONTENTS
+  
+#CONTENTS:
   1.Hardware Used:
     1.1 Arduino UNO:          
-      Microcontroller: ATmega328
-      Operating Voltage: 5V
-      Input Voltage (recommended): 7-12V
-      Input Voltage (limits): 6-20V
-      Digital I/O Pins: 14 (of which 6 provide PWM output)
-      Analog Input Pins: 6
-      DC Current per I/O Pin: 40 mA
-      DC Current for 3.3V Pin: 50 mA
-      Flash Memory: 32 KB of which 0.5 KB used by bootloader
-      SRAM: 2 KB (ATmega328)
-      EEPROM: 1 KB (ATmega328)
-      Clock Speed: 16 MHz
+      Microcontroller-ATmega328
+      Operating Voltage- 5V
+      Input Voltage (recommended)- 7-12V
+      Input Voltage (limits)- 6-20V
+      Digital I/O Pins- 14 (of which 6 provide PWM output)
+      Analog Input Pins- 6
+      DC Current per I/O Pin- 40 mA
+      DC Current for 3.3V Pin- 50 mA
+      Flash Memory- 32 KB of which 0.5 KB used by bootloader
+      SRAM- 2 KB (ATmega328)
+      EEPROM- 1 KB (ATmega328)
+      Clock Speed- 16 MHz
 
     1.2 Laser Module(INT 2549):
       Output Power:
