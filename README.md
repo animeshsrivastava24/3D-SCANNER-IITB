@@ -1,12 +1,16 @@
 # ABOUT:
-This project is being undertaken under the FOSSEE organisation of IIT BOMBAY under MHRD under the guidance of Dr.D B         Phatak(Patron),Rajesh Kushalkar(FOSSEE Manager) and Akshay Chipkar(Project Mentor).The project aims at creating an Open Source 3D Scanner for the the Community. 3D Scanner can be used to scan any 3D object using Open Source Hardware and Software with miminum cost.  
+This project is being undertaken under the FOSSEE organisation of IIT BOMBAY under MHRD under the guidance of Dr.D B         Phatak(Patron),Rajesh Kushalkar(Manager, FOSSEE Projects) and Akshay Chipkar(Project Mentor).The project aims at developing open source hardware and software for 3D scanning of objects.
 
 # DESCRIPTION:
 This project is undertaken by four interns during the Summer of 2017 under the Ekalavya Project sponsored by the MHRD,India.
+  ##  1. Sagar Satapathy, NIT Rourkela
+  ##  2. Animesh Srivastava, NIT Hamirpur
+  ##  3. Anchal Singh, NIT Uttarakhand
+  ##  4. Soumya Sambit Rath, NIT Rourkela
   
 # CONTENTS:
   ## 1.Hardware Used:
-    ### 1.1 Arduino UNO:          
+  ### 1.1 Arduino UNO:          
       Microcontroller-ATmega328
       Operating Voltage- 5V
       Input Voltage (recommended)- 7-12V
@@ -20,7 +24,7 @@ This project is undertaken by four interns during the Summer of 2017 under the E
       EEPROM- 1 KB (ATmega328)
       Clock Speed- 16 MHz
 
-    ### 1.2 Laser Module(INT 2549):
+  ### 1.2 Laser Module(INT 2549):
       Output Power:
       Min:2.5mW  
       Typical:3.0mW 
@@ -38,7 +42,7 @@ This project is undertaken by four interns during the Summer of 2017 under the E
       Focused Dot Width:
         < 2mm spotting 3 meters away
     
-    ### 1.3 Stepper Motor(28BYJ-48):
+  ### 1.3 Stepper Motor(28BYJ-48):
         Rated voltage ： 5V DC
         Number of Phase ： 4
         Speed Variation Ratio ： 1/64
@@ -54,22 +58,48 @@ This project is undertaken by four interns during the Summer of 2017 under the E
         Insulated resistance : >10MΩ(500V)
 
   ## 2.Open Source Technologies Used:
-    ### 2.1 OpenCV 3.2.0
-    ### 2.2 OpenGL 
-    ### 2.3 Python 2.7
-    ### 2.4 Numpy 
-    ### 2.5 Matplotlib
-    ### 2.6 Pygame 
-    ### 2.7 Tkinter 
-    ### 2.8 Python Imaging Library
-    ### 2.9 Pyserial 
   
-
+  ### 2.1 Python 2.7
+      Python was chosen as the default language for writing all the programs throughout the project. The version used by the developers was 2.7.6
+      
+  ### 2.2 PyOpenGL 
+      PyOpenGL is the most common cross platform Python binding to OpenGL and related APIs. The binding is created using the standard ctypes library, and is provided under an extremely liberal BSD-style Open-Source license.
+      Url: http://pyopengl.sourceforge.net/
+      
+  ### 2.3 OpenCV 3.2.0
+      OpenCV (Open Source Computer Vision Library) is released under a BSD license and hence it’s free for both academic     and commercial use. Written in optimized C/C++, the library can take advantage of multi-core processing.
+      Url: http://opencv.org/
+ 
+  ### 2.4 Numpy 
+      NumPy is the fundamental package for scientific computing with Python.Besides its obvious scientific uses, NumPy can also be used as an efficient multi-dimensional container of generic data. Arbitrary data-types can be defined. This allows NumPy to seamlessly and speedily integrate with a wide variety of databases.NumPy is licensed under the BSD license, enabling reuse with few restrictions.
+      Url: http://www.numpy.org/
+      
+  ### 2.5 Matplotlib
+      Matplotlib is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms.
+      Url: https://matplotlib.org/
+      
+  ### 2.6 Pygame 
+      Pygame is a cross-platform set of Python modules designed for writing video games. It includes computer graphics and sound libraries designed to be used with the Python programming language.
+      It was used in the project for rendering the graphics in the display window.
+      Url: https://www.pygame.org/news
+      
+  ### 2.7 Tkinter
+      Tkinter is Python's de-facto standard GUI (Graphical User Interface) package.It was used for creating the windows and the widgets.
+      Url: https://wiki.python.org/moin/TkInter
+      
+  ### 2.8 Python Imaging Library
+      The Python Imaging Library (PIL) adds image processing capabilities to your Python interpreter. This library supports many file formats, and provides powerful image processing and graphics capabilities. the version that was used is 1.1.7
+      Url: http://www.pythonware.com/products/pil/
+      
+  ### 2.9 Pyserial 
+      Python Serial Port Extension package
+      Since a MicroController was used, this package was used for serial communications.
+      Url: https://pypi.python.org/pypi/pyserial
+  
 # INSTALLATION
 
 # USAGE:
   
-
 # CONTRIBUTING
 
 # CREDITS
