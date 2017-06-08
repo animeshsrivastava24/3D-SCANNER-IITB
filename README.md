@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="100" height="98" src="http://www.iitb.ac.in/sites/all/themes/touchm/logo.png">
+</p>
+
 # ABOUT:
 This a project of FOSSEE, IIT Bombay funded by MHRD, GoI under the guidance of Prof.D B Phatak(Patron),Rajesh Kushalkar(Project Manager, IDL, IIT Bombay) and Akshay Chipkar(Project Mentor).
 The project aims at developing open source hardware and software for 3D scanning of objects.
@@ -44,19 +48,19 @@ The project is undertaken by four interns during the Summer of 2017 under the Ek
         < 2mm spotting 3 meters away
     
   ### 1.3 Stepper Motor(28BYJ-48):
-        Rated voltage ： 5V DC
-        Number of Phase ： 4
-        Speed Variation Ratio ： 1/64
-        Stride Angle ： 5.625° /64
-        Frequency : 100Hz
-        DC resistance ： 200Ω±7%(25℃)
-        Idle In-traction Frequency : >600Hz
-        Idle Out-traction Frequency : >1000Hz
-        In-traction Torque : >34.3mN.m(120Hz)
-        Self-positioning Torque : >34.3mN.m
-        Friction torque : 800-1800 gf.cm
-        Pull in torque  : 450 gf.cm
-        Insulated resistance : >10MΩ(500V)
+      Rated voltage ： 5V DC
+      Number of Phase ： 4
+      Speed Variation Ratio ： 1/64
+      Stride Angle ： 5.625° /64
+      Frequency : 100Hz
+      DC resistance ： 200Ω±7%(25℃)
+      Idle In-traction Frequency : >600Hz
+      Idle Out-traction Frequency : >1000Hz
+      In-traction Torque : >34.3mN.m(120Hz)
+      Self-positioning Torque : >34.3mN.m
+      Friction torque : 800-1800 gf.cm
+      Pull in torque  : 450 gf.cm
+      Insulated resistance : >10MΩ(500V)
 
   ## 2.Open Source Technologies Used:
   
@@ -98,6 +102,11 @@ The project is undertaken by four interns during the Summer of 2017 under the Ek
       Url: https://pypi.python.org/pypi/pyserial
   
 # INSTALLATION
+Download the installscript.sh file and execute it.
+```
+$cd "< path of the file >"
+$./installscript.sh
+```
 
 # USAGE:
   
