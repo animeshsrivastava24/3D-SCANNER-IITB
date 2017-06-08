@@ -1,5 +1,5 @@
 #ABOUT:
-  This project is being undertaken under the FOSSEE organisation of IIT BOMBMAY under MHRD under the guidance of Dr.D B         Phatak(Patron),Rajesh Kushalkar(FOSSEE Manager) and Akshay Chipkar(Project Mentor).The project aims at creating an Open Source 3D Scanner for the the Community. 3D Scanner can be used to scan any 3D object using Open Source Hardware and Software with miminum cost.  
+  This project is being undertaken under the FOSSEE organisation of IIT BOMBAY under MHRD under the guidance of Dr.D B         Phatak(Patron),Rajesh Kushalkar(FOSSEE Manager) and Akshay Chipkar(Project Mentor).The project aims at creating an Open Source 3D Scanner for the the Community. 3D Scanner can be used to scan any 3D object using Open Source Hardware and Software with miminum cost.  
 
 #DESCRIPTION:
   This project is undertaken by four interns during the Summer of 2017 under the Ekalavya Project sponsored by the MHRD,India.
