@@ -115,50 +115,50 @@ class Root(): #A class called Root is defined
 		pg.display.init()# Usual pygame initialization
 		pg.display.set_mode((640,480), DOUBLEBUF|OPENGL|HWSURFACE|RESIZABLE) #refer to https://www.pygame.org/docs/ref/display.html
 		while 1:
-				_, self.frame = self.cap.read() #Read the video device input
-				#self.frame = cv2.flip(self.frame, 1) #This should be uncommented to get the miiror image of the actual frame
-				self.img_hsv=cv2.cvtColor(self.frame, cv2.COLOR_BGR2HSV) #change the format of the image from BGR to HSV
-				self.lower_red = np.array([0,50,50]) #lower limit of "RED" in lower range of Hue in HSV format
-				self.upper_red = np.array([10,255,255]) #upper limit of "RED" in lower range of Hue in HSV format
-				self.mask0 = cv2.inRange(self.img_hsv, self.lower_red, self.upper_red) #create a mask within the specified values of RED
-				self.lower_red = np.array([170,50,50]) #lower limit of "RED" in upper range of Hue in HSV format
-				self.upper_red = np.array([180,255,255]) #upper limit of "RED" in upper range of Hue in HSV format
-				self.mask1 = cv2.inRange(self.img_hsv, self.lower_red, self.upper_red) #create a mask within the specified values of RED
-				self.mask = self.mask0+self.mask1 #both the masks are added and a new mask is created
-				self.output_img = self.frame.copy() #a copy of the main frame is created
-				self.output_img[np.where(self.mask==0)] = 0 #where the mask value is 0, make those coordinates black
-				self.output_img[np.where(self.mask>100)] =255 #The target points, or the points which are RED in colour are displayed in white
-				
-				self.gray = cv2.cvtColor(self.output_img, cv2.COLOR_BGR2GRAY)
-				self.gray = cv2.GaussianBlur(self.gray, (5, 5), 0)
-				self.thresh = cv2.threshold(self.gray, 45, 255, cv2.THRESH_BINARY)[1]
-				self.thresh = cv2.erode(self.thresh, None, iterations=2)
-				self.thresh = cv2.dilate(self.thresh, None, iterations=2)
-				
-				#finding the contours with RED colour
-				self.cnts = cv2.findContours(self.thresh.copy(), cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
-				self.cnts = self.cnts[0] if imutils.is_cv2() else self.cnts[1]
-				
-				for i in range(len(self.cnts)):
-					self.c=self.cnts[i]
-					cv2.drawContours(self.output_img, [self.c], -1, (0, 255, 255), 2) #Draw all the contours with a blue background
-						
-				self.im=ShowBmp(self.output_img) #process the output_img with OpenGL functions defined inside ShowBmp
-				wall(self.im) #create the wall to be displayed in pygame
-				pg.display.flip()# Update the pygame display
-				
-				if (self.FlagValue==1 and self.FrameCount<1024):
-					ser=serial.Serial('/dev/'+self.Boards[self.BoardNumber-1], 9600) #open the serial port
-					ser.write(b'1') #write serial data
-					cv2.imwrite(str(self.FrameCount)+'.png',self.output_img) #save the .png image
-					self.plot()
-					time.sleep(0.01) #pause the code for 10ms
-					self.FrameCount+=1 #increase the frame counter
-				
-				elif (self.FlagValue==1 and self.FrameCount==1023): 
-					self.FlagCount=0
-					self.FrameCount=0
-				self.root.update()# Update the Tk display
+			_, self.frame = self.cap.read() #Read the video device input
+			#self.frame = cv2.flip(self.frame, 1) #This should be uncommented to get the miiror image of the actual frame
+			self.img_hsv=cv2.cvtColor(self.frame, cv2.COLOR_BGR2HSV) #change the format of the image from BGR to HSV
+			self.lower_red = np.array([0,50,50]) #lower limit of "RED" in lower range of Hue in HSV format
+			self.upper_red = np.array([10,255,255]) #upper limit of "RED" in lower range of Hue in HSV format
+			self.mask0 = cv2.inRange(self.img_hsv, self.lower_red, self.upper_red) #create a mask within the specified values of RED
+			self.lower_red = np.array([170,50,50]) #lower limit of "RED" in upper range of Hue in HSV format
+			self.upper_red = np.array([180,255,255]) #upper limit of "RED" in upper range of Hue in HSV format
+			self.mask1 = cv2.inRange(self.img_hsv, self.lower_red, self.upper_red) #create a mask within the specified values of RED
+			self.mask = self.mask0+self.mask1 #both the masks are added and a new mask is created
+			self.output_img = self.frame.copy() #a copy of the main frame is created
+			self.output_img[np.where(self.mask==0)] = 0 #where the mask value is 0, make those coordinates black
+			self.output_img[np.where(self.mask>100)] =255 #The target points, or the points which are RED in colour are displayed in white
+			
+			self.gray = cv2.cvtColor(self.output_img, cv2.COLOR_BGR2GRAY)
+			self.gray = cv2.GaussianBlur(self.gray, (5, 5), 0)
+			self.thresh = cv2.threshold(self.gray, 45, 255, cv2.THRESH_BINARY)[1]
+			self.thresh = cv2.erode(self.thresh, None, iterations=2)
+			self.thresh = cv2.dilate(self.thresh, None, iterations=2)
+			
+			#finding the contours with RED colour
+			self.cnts = cv2.findContours(self.thresh.copy(), cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+			self.cnts = self.cnts[0] if imutils.is_cv2() else self.cnts[1]
+			
+			for i in range(len(self.cnts)):
+				self.c=self.cnts[i]
+				cv2.drawContours(self.output_img, [self.c], -1, (0, 255, 255), 2) #Draw all the contours with a blue background
+					
+			self.im=ShowBmp(self.output_img) #process the output_img with OpenGL functions defined inside ShowBmp
+			wall(self.im) #create the wall to be displayed in pygame
+			pg.display.flip()# Update the pygame display
+			
+			if (self.FlagValue==1 and self.FrameCount<1024):
+				ser=serial.Serial('/dev/'+self.Boards[self.BoardNumber-1], 9600) #open the serial port
+				ser.write(b'1') #write serial data
+				cv2.imwrite(str(self.FrameCount)+'.png',self.output_img) #save the .png image
+				self.plot()
+				time.sleep(0.01) #pause the code for 10ms
+				self.FrameCount+=1 #increase the frame counter
+			
+			elif (self.FlagValue==1 and self.FrameCount==1023): 
+				self.FlagCount=0
+				self.FrameCount=0
+			self.root.update()# Update the Tk display
 	
 	def CreateMainWindow(self):
 		self.root.wm_title("Webcam Interface") #assign title to the root window
