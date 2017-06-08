@@ -37,6 +37,7 @@
         650nm
       Focused Dot Width:
         < 2mm spotting 3 meters away
+    
     1.3 Stepper Motor(28BYJ-48):
         Rated voltage ： 5V DC
         Number of Phase ： 4
