@@ -43,6 +43,8 @@ class Root(): #A class called Root is defined
 		self.root = tk.Tk()
 		self.FlagValue=0
 		self.FrameCount=0
+		self.X=[]
+		self.Y=[]
 
 	def setDeviceNumber(self,x): #callback function to set the VideoDeviceNumber 
 		self.VideoDeviceNumber=x
@@ -63,8 +65,10 @@ class Root(): #A class called Root is defined
 		self.FolderName=strftime("%Y-%m-%d %H:%M:%S", gmtime()) #string to store the folder name "<CurrentDate CurrentTime>"
 		os.mkdir('./'+self.FolderName) #creates a folder in the local directory
 		os.chdir('./'+self.FolderName) #changes the directory to the created directory
-
-		
+	
+	def StopCapture(self):
+		self.FlagValue=0 # makes the flag value to 0 to stop the capturing of frames
+			
 	def thread2(self):
 		self.th2=threading.Thread(target=self.Capture) #a thread is initiated to call the self.Capture() function
 		self.th2.start() #the thread is started
@@ -86,7 +90,7 @@ class Root(): #A class called Root is defined
 			towrite.append(a)
 		
 		#A file is opened to write the coordinates of the contour
-		f=open(str(self.FrameCount)+".txt", 'a') 
+		f=open(str(self.FrameCount)+".txt", 'w') 
 		for i in towrite:
 			i=str(i)
 			i=i.strip()
@@ -94,10 +98,10 @@ class Root(): #A class called Root is defined
 			i=i.replace('  ', ' ')
 			i=i.strip()
 			temp=i.split(' ')
-			X.append(int(temp[0]))
-			Y.append(-int(temp[1]))	
-		f.write(str(X)+'\n\n')
-		f.write(str(Y)+'\n\n')
+			self.X.append(int(temp[0]))
+			self.Y.append(-int(temp[1]))	
+		f.write(str(self.X)+'\n\n')
+		f.write(str(self.Y)+'\n\n')
 		
 			
 			
@@ -110,7 +114,9 @@ class Root(): #A class called Root is defined
 		self.embed = tk.Frame(self.root, width=Root.w, height=Root.h)#a frame called 'embed' is created that hosts the pygame graphics
 		self.embed.pack() #The frame is packed
 		self.button=tk.Button(self.root, text="Start Capturing", command=self.Capture) #Button is created 
-		self.button.pack() #Button is packed
+		self.button.pack() #Button is packed in left side
+		self.button=tk.Button(self.root, text="Stop Capturing" , command=self.StopCapture) #Button is created 
+		self.button.pack() #Button is packed in right side
 		os.environ['SDL_WINDOWID'] = str(self.embed.winfo_id())# Tell pygame's SDL window which window ID to use
 		self.root.update() #the window is updated
 		pg.display.init()# Usual pygame initialization
@@ -139,7 +145,7 @@ class Root(): #A class called Root is defined
 			#finding the contours with RED colour
 			self.cnts = cv2.findContours(self.thresh.copy(), cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
 			self.cnts = self.cnts[0] if imutils.is_cv2() else self.cnts[1]
-			
+			#self.c=self.cnts[0]
 			for i in range(len(self.cnts)):
 				self.c=self.cnts[i]
 				cv2.drawContours(self.output_img, [self.c], -1, (0, 255, 255), 2) #Draw all the contours with a blue background
@@ -153,7 +159,6 @@ class Root(): #A class called Root is defined
 				ser=serial.Serial('/dev/'+self.Boards[self.BoardNumber-1], 9600) #open the serial port
 				ser.write(b'1') #write serial data
 				cv2.imwrite(str(self.FrameCount)+'.png',self.output_img) #save the .png image
-				
 				time.sleep(0.01) #pause the code for 10ms
 				self.FrameCount+=1 #increase the frame counter
 			
