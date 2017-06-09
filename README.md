@@ -62,6 +62,9 @@ The project is undertaken by four interns during the Summer of 2017 under the Ek
       Friction torque : 800-1800 gf.cm
       Pull in torque  : 450 gf.cm
       Insulated resistance : >10MΩ(500V)
+  
+  ### 1.4 Current Amplifier IC(ULN2003)
+  [ULN2003 Datasheet](http://www.seeedstudio.com/document/pdf/ULN2003%20Datasheet.pdf)
 
   ## 2.Open Source Technologies Used:
   
@@ -135,4 +138,4 @@ The project is undertaken by four interns during the Summer of 2017 under the Ek
 
 
 
-Copyright (c) 2017 Team SAAS , the above open source program codes are worked and tested on Ubuntu Linux 14.04.5
+Copyright (c) 2017 Team SAAS , the above open source program codes were written and tested on Ubuntu 14.04.5
