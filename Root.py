@@ -86,7 +86,7 @@ class Root(): #A class called Root is defined
 			towrite.append(a)
 		
 		#A file is opened to write the coordinates of the contour
-		f=open(str(self.FrameCount)+".txt", 'w') 
+		f=open(str(self.FrameCount)+".txt", 'a') 
 		for i in towrite:
 			i=str(i)
 			i=i.strip()
@@ -143,7 +143,8 @@ class Root(): #A class called Root is defined
 			for i in range(len(self.cnts)):
 				self.c=self.cnts[i]
 				cv2.drawContours(self.output_img, [self.c], -1, (0, 255, 255), 2) #Draw all the contours with a blue background
-					
+				if (self.FlagValue==1):
+						self.plot()	
 			self.im=ShowBmp(self.output_img) #process the output_img with OpenGL functions defined inside ShowBmp
 			wall(self.im) #create the wall to be displayed in pygame
 			pg.display.flip()# Update the pygame display
@@ -152,7 +153,7 @@ class Root(): #A class called Root is defined
 				ser=serial.Serial('/dev/'+self.Boards[self.BoardNumber-1], 9600) #open the serial port
 				ser.write(b'1') #write serial data
 				cv2.imwrite(str(self.FrameCount)+'.png',self.output_img) #save the .png image
-				self.plot()
+				
 				time.sleep(0.01) #pause the code for 10ms
 				self.FrameCount+=1 #increase the frame counter
 			
