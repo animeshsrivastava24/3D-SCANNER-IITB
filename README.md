@@ -20,10 +20,10 @@ src : Fausto Bernardini, [Holly E. Rushmeier (2002)](https://en.wikipedia.org/wi
 
 # DESCRIPTION:
 The project is undertaken by four interns during the Summer of 2017 under the Ekalavya Summer Internship sponsored by the MHRD,India at Integrated Development Lab, Department of Computer Science and Engineering, IIT Bombay.
-  ##  1. Sagar Satapathy, NIT Rourkela
-  ##  2. Animesh Srivastava, NIT Hamirpur
-  ##  3. Anchal Singh, NIT Uttarakhand
-  ##  4. Soumya Sambit Rath, NIT Rourkela
+  ##  1. [Sagar Satapathy, NIT Rourkela](https://github.com/sagarbaba)
+  ##  2. [Animesh Srivastava, NIT Hamirpur](https://github.com/animeshsrivastava24)
+  ##  3. [Anchal Singh, NIT Uttarakhand](https://github.com/Anchalpanwar)
+  ##  4. [Soumya Sambit Rath, NIT Rourkela](https://github.com/ss-rath)
   
 # CONTENTS:
   ## 1.Hardware Used:
