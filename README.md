@@ -116,4 +116,4 @@ $./installscript.sh
 
 
 
-Copyright (c) 2017 Team SAAS
+Copyright (c) 2017 Team SAAS , the above open source program codes are worked and tested on Ubuntu Linux 14.04.5
