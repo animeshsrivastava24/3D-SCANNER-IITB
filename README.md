@@ -5,6 +5,18 @@
 # ABOUT:
 This a project of FOSSEE, IIT Bombay funded by MHRD, GoI under the guidance of Prof.D B Phatak(Patron),Rajesh Kushalkar(Project Manager, IDL, IIT Bombay) and Akshay Chipkar(Project Mentor).
 The project aims at developing open source hardware and software for 3D scanning of objects.
+# 3D SCANNER
+A **[3D Scanner](https://en.wikipedia.org/wiki/3D_scanner)** is a device that analyses a real-world object or environment to collect data on its shape and possibly its appearance (e.g. colour). The collected data can then be used to construct digital three-dimensional models.
+
+Many different technologies can be used to build these 3D-scanning devices; each technology comes with its own limitations, advantages and costs. Many limitations in the kind of objects that can be digitised are still present, for example, optical technologies encounter many difficulties with shiny, mirroring or transparent objects. For example, industrial computed tomography scanning can be used to construct digital 3D models, applying non-destructive testing.
+
+Collected 3D data is useful for a wide variety of applications. These devices are used extensively by the entertainment industry in the production of movies and video games. Other common applications of this technology include industrial design, orthotics and prosthetics, reverse engineering and prototyping, quality control/inspection and documentation of cultural artifacts.
+The purpose of a 3D scanner is usually to create a point cloud of geometric samples on the surface of the subject. These points can then be used to extrapolate the shape of the subject (a process called reconstruction). If colour information is collected at each point, then the colours on the surface of the subject can also be determined.
+
+3D scanners share several traits with cameras. Like most cameras, they have a cone-like field of view, and like cameras, they can only collect information about surfaces that are not obscured. While a camera collects colour information about surfaces within its field of view, a 3D scanner collects distance information about surfaces within its field of view. The "picture" produced by a 3D scanner describes the distance to a surface at each point in the picture. This allows the three dimensional position of each point in the picture to be identified.
+
+For most situations, a single scan will not produce a complete model of the subject. Multiple scans, even hundreds, from many different directions are usually required to obtain information about all sides of the subject. These scans have to be brought into a common reference system, a process that is usually called alignment or registration, and then merged to create a complete model. This whole process, going from the single range map to the whole model, is usually known as the 3D scanning pipeline.
+src : Fausto Bernardini, [Holly E. Rushmeier (2002)](https://en.wikipedia.org/wiki/Holly_Rushmeier). "[The 3D Model Acquisition Pipeline](http://www1.cs.columbia.edu/~allen/PHOTOPAPERS/pipeline.fausto.pdf)" (pdf). Comput. Graph. Forum. 21 (2): 149–172. doi:[10.1111/1467-8659.00574](https://doi.org/10.1111%2F1467-8659.00574).
 
 # DESCRIPTION:
 The project is undertaken by four interns during the Summer of 2017 under the Ekalavya Summer Internship sponsored by the MHRD,India at Integrated Development Lab, Department of Computer Science and Engineering, IIT Bombay.
