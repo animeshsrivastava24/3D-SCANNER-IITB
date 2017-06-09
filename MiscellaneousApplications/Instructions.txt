@@ -1,1 +1,0 @@
-These are the Miscellanous codes which were written fir the purpose of testing before final implementation
