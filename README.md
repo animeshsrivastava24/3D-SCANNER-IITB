@@ -103,11 +103,11 @@ The project is undertaken by four interns during the Summer of 2017 under the Ek
       Src: https://pypi.python.org/pypi/pyserial
   
   ## 3. INSTALLATION:
-     Download the installscript.sh file and execute it.
-     ```
-        $cd "< path of the file >"
-        $bash installscript.sh
-     ```
+      Download the installscript.sh file and execute it.
+  ```
+    $cd "< path of the file >"
+    $bash installscript.sh
+  ```
 
   ## 4. USAGE: 
    ### 4.1 Manufacturing:
