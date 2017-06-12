@@ -6,7 +6,7 @@
 
 #the necessary packages are imported
 import os
-import v4l2
+import v4l2 #a python binding for the video4linux2 users api
 import fcntl
 from ValueSelected import * #local package
 from ShowBmp import * #local package
@@ -21,7 +21,7 @@ Developed by Team SAAS, Ekalavya 2017, IITB"""
 def RefreshCamList(): #Function to refresh the list of available Webcams and Arduinoes
 	#Some local empty lists are initialised
 	CamList=[]
-	AddressList=[]
+	AddressList=[]#It has address nameo of devices
 	CamDict={}
 	ArduinoList=[]
 	DeviceList=os.listdir("/dev") #it will return a list of the contents inside /dev
@@ -31,10 +31,12 @@ def RefreshCamList(): #Function to refresh the list of available Webcams and Ard
 			AddressList.append(i) #the video devices are added to CamList
 	for i in AddressList:
 		vd = open("/dev/"+i, 'rw') 
-		cp = v4l2.v4l2_capability()
+		cp = v4l2.v4l2_capability() 
 		fcntl.ioctl(vd, v4l2.VIDIOC_QUERYCAP, cp) 
-		CamList.append(cp.card)
-		CamDict[cp.card]=i #appends the data to the dictionary in the format "Logitech":"video1"
+		CamList.append(cp.card)#cp..card and cp.driver returns full detail of card
+		CamDict[cp.card]=i 
+		#With every cp.card name address is attached
+		#appends the data to the dictionary in the format "Logitech":"video1"
 		
 	for i in DeviceList:
 		temp=i
