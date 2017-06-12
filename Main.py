@@ -18,13 +18,14 @@ This is a software where you can select the Video Device and get the output
 Developed by Team SAAS, Ekalavya 2017, IITB"""
 
 
-def RefreshCamList(): #Function to refresh the list of available Webcams and Arduinoes
+def RefreshCamList(): #Function to refresh the list of available Webcams and Arduinos
 	#Some local empty lists are initialised
 	CamList=[]
-	AddressList=[]#It has address nameo of devices
+	AddressList=[]#It has address-name of devices
 	CamDict={}
 	ArduinoList=[]
-	DeviceList=os.listdir("/dev") #it will return a list of the contents inside /dev
+	DeviceList=os.listdir("/dev") #the method listdir() returns a list containing the name of enteries
+	#in the directory given by the path.We know that any devices connected to system are in folder /dev
 	for i in DeviceList:
 		temp=i
 		if (temp[:5]=='video'):
