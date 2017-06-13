@@ -25,7 +25,7 @@ def wall(image): #it creates the OpenGL texture that has to be displayed inside 
 	glVertex3f(4,-4,-8)
 	glEnd()
 
-def ShowBmp(x):#this is used to show the bmp(extension) image from the screen
+def ShowBmp(x):
 	pixl_arr = numpy.swapaxes(x, 0, 1) #the x and the y axes are swapped to make it compatible with pygame
 	new_surf = pygame.pixelcopy.make_surface(pixl_arr)
 	textureData = pygame.image.tostring(new_surf, "RGB", 1)

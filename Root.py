@@ -45,6 +45,12 @@ class Root(): #A class called Root is defined
 		self.FrameCount=0
 		self.X=[]
 		self.Y=[]
+		self.redlow=240
+		self.redup=255
+		self.greenlow=150
+		self.greenup=255
+		self.bluelow=235
+		self.blueup=255
 
 	def setDeviceNumber(self,x): #callback function to set the VideoDeviceNumber 
 		self.VideoDeviceNumber=x
@@ -102,6 +108,14 @@ class Root(): #A class called Root is defined
 			self.Y.append(-int(temp[1]))	
 		f.write(str(self.X)+'\n\n')
 		f.write(str(self.Y)+'\n\n')
+	
+	def SetRGBValues(self):
+		self.redlow=int(self.rlow.get())
+		self.redup=int(self.rup.get())
+		self.greenlow=int(self.glow.get())
+		self.greenup=int(self.gup.get())
+		self.bluelow=int(self.blow.get())
+		self.blueup=int(self.bup.get())
 		
 			
 			
@@ -117,6 +131,33 @@ class Root(): #A class called Root is defined
 		self.button.pack() #Button is packed in left side
 		self.button=tk.Button(self.root, text="Stop Capturing" , command=self.StopCapture) #Button is created 
 		self.button.pack() #Button is packed in right side
+		self.rlow=tk.StringVar(self.root)
+		self.rlow.set(230)
+		self.entry_rlow=tk.Entry(self.root, textvariable=self.rlow)
+		self.entry_rlow.pack()
+		self.rup=tk.StringVar(self.root)
+		self.rup.set(255)
+		self.entry_rup=tk.Entry(self.root, textvariable=self.rup)
+		self.entry_rup.pack()
+		self.glow=tk.StringVar(self.root)
+		self.glow.set(230)
+		self.entry_glow=tk.Entry(self.root, textvariable=self.glow)
+		self.entry_glow.pack()
+		self.gup=tk.StringVar(self.root)
+		self.gup.set(255)
+		self.entry_gup=tk.Entry(self.root, textvariable=self.gup)
+		self.entry_gup.pack()
+		self.blow=tk.StringVar(self.root)
+		self.blow.set(230)
+		self.entry_blow=tk.Entry(self.root, textvariable=self.blow)
+		self.entry_blow.pack()
+		self.bhigh=tk.StringVar(self.root)
+		self.bhigh.set(255)
+		self.entry_bhigh=tk.Entry(self.root, textvariable=self.bhigh)
+		self.entry_bhigh.pack()
+		self.SetButton=tk.Button(self.root, text="Set RGB Values", command=self.SetRGBValues) #Button is created 
+		self.SetButton.pack() #Button is packed in left side
+		
 		os.environ['SDL_WINDOWID'] = str(self.embed.winfo_id())# Tell pygame's SDL window which window ID to use
 		self.root.update() #the window is updated
 		pg.display.init()# Usual pygame initialization
@@ -124,18 +165,12 @@ class Root(): #A class called Root is defined
 		while 1:
 			_, self.frame = self.cap.read() #Read the video device input
 			#self.frame = cv2.flip(self.frame, 1) #This should be uncommented to get the miiror image of the actual frame
-			self.img_hsv=cv2.cvtColor(self.frame, cv2.COLOR_BGR2HSV) #change the format of the image from BGR to HSV
-			self.lower_red = np.array([0,50,50]) #lower limit of "RED" in lower range of Hue in HSV format
-			self.upper_red = np.array([10,255,255]) #upper limit of "RED" in lower range of Hue in HSV format
-			self.mask0 = cv2.inRange(self.img_hsv, self.lower_red, self.upper_red) #create a mask within the specified values of RED
-			self.lower_red = np.array([170,50,50]) #lower limit of "RED" in upper range of Hue in HSV format
-			self.upper_red = np.array([180,255,255]) #upper limit of "RED" in upper range of Hue in HSV format
-			self.mask1 = cv2.inRange(self.img_hsv, self.lower_red, self.upper_red) #create a mask within the specified values of RED
-			self.mask = self.mask0+self.mask1 #both the masks are added and a new mask is created
+			self.lower = np.array([self.bluelow,self.greenlow,self.redlow]) #lower limit of BGR values of the laser line
+			self.upper= np.array([self.blueup,self.greenup,self.redup]) #upper limit of BGR values of the laser line
+			self.mask = cv2.inRange(self.frame, self.lower, self.upper) #create a mask within the specified values of RED
 			self.output_img = self.frame.copy() #a copy of the main frame is created
 			self.output_img[np.where(self.mask==0)] = 0 #where the mask value is 0, make those coordinates black
-			self.output_img[np.where(self.mask>100)] =255 #The target points, or the points which are RED in colour are displayed in white
-			
+			self.output_img[np.where(self.mask>100)] =255 #The target points, or the points which belong to the laser line are displayed in white
 			self.gray = cv2.cvtColor(self.output_img, cv2.COLOR_BGR2GRAY)
 			self.gray = cv2.GaussianBlur(self.gray, (5, 5), 0)
 			self.thresh = cv2.threshold(self.gray, 45, 255, cv2.THRESH_BINARY)[1]
