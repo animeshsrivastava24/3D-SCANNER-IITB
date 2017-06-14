@@ -19,6 +19,7 @@ import matplotlib.pyplot as plt
 from About import *
 from ShowBmp import *
 import ValueSelected
+import Integration
 
 #python inbuilt packages
 import Tkinter as tk
@@ -92,7 +93,7 @@ class Root(): #A class called Root is defined
 		for i in range(len(temp1)):
 			temp.append(str(temp1[i]).split(','))
 		for i in temp:
-			a=(str(i[0]).split('['))[1].split(']')[0]
+			a=(str(i[0]).split('['))[1].split(']')[0] #Extract the information between two square brackets
 			towrite.append(a)
 		
 		#A file is opened to write the coordinates of the contour
@@ -117,7 +118,10 @@ class Root(): #A class called Root is defined
 		self.bluelow=int(self.blow.get())
 		self.blueup=int(self.bup.get())
 		
-			
+	def Show3D(self):
+		ScannedObject=Integrate.Integrate()
+		ScannedObject.ReadFile('./'+self.FolderName)
+		ScannedObject.Plot3D()
 			
 	def ShowFrame(self):
 		try:
@@ -131,6 +135,9 @@ class Root(): #A class called Root is defined
 		self.button.pack() #Button is packed in left side
 		self.button=tk.Button(self.root, text="Stop Capturing" , command=self.StopCapture) #Button is created 
 		self.button.pack() #Button is packed in right side
+		self.button=tk.Button(self.root, text="Show 3D" , command=self.Show3D) #Button is created 
+		self.button.pack() #Button is packed in right side
+		#variables to set the lower and the upper values of RGB are initialised
 		self.rlow=tk.StringVar(self.root)
 		self.rlow.set(230)
 		self.entry_rlow=tk.Entry(self.root, textvariable=self.rlow)
@@ -140,7 +147,7 @@ class Root(): #A class called Root is defined
 		self.entry_rup=tk.Entry(self.root, textvariable=self.rup)
 		self.entry_rup.pack()
 		self.glow=tk.StringVar(self.root)
-		self.glow.set(230)
+		self.glow.set(150)
 		self.entry_glow=tk.Entry(self.root, textvariable=self.glow)
 		self.entry_glow.pack()
 		self.gup=tk.StringVar(self.root)
@@ -148,7 +155,7 @@ class Root(): #A class called Root is defined
 		self.entry_gup=tk.Entry(self.root, textvariable=self.gup)
 		self.entry_gup.pack()
 		self.blow=tk.StringVar(self.root)
-		self.blow.set(230)
+		self.blow.set(150)
 		self.entry_blow=tk.Entry(self.root, textvariable=self.blow)
 		self.entry_blow.pack()
 		self.bhigh=tk.StringVar(self.root)
