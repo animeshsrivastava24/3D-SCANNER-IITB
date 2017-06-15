@@ -178,15 +178,11 @@ class Root(): #A class called Root is defined
 			self.output_img = self.frame.copy() #a copy of the main frame is created
 			self.output_img[np.where(self.mask==0)] = 0 #where the mask value is 0, make those coordinates black
 			self.output_img[np.where(self.mask>100)] =255 #The target points, or the points which belong to the laser line are displayed in white
-			#try an alternative with the Bitwise and in newer version
 			self.gray = cv2.cvtColor(self.output_img, cv2.COLOR_BGR2GRAY)
 			self.gray = cv2.GaussianBlur(self.gray, (5, 5), 0)
 			self.thresh = cv2.threshold(self.gray, 45, 255, cv2.THRESH_BINARY)[1]
 			self.thresh = cv2.erode(self.thresh, None, iterations=2)
 			self.thresh = cv2.dilate(self.thresh, None, iterations=2)
-			#Dilation after erosion is an opening process which is used for morphological noise removal.
-			#it removes small objects from the foreground and places them in background.this techniques used to find specific shapes in an image. 
-			
 			
 			#finding the contours with RED colour
 			self.cnts = cv2.findContours(self.thresh.copy(), cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
