@@ -184,8 +184,9 @@ class Root(): #A class called Root is defined
 			self.thresh = cv2.threshold(self.gray, 45, 255, cv2.THRESH_BINARY)[1]
 			self.thresh = cv2.erode(self.thresh, None, iterations=2)
 			self.thresh = cv2.dilate(self.thresh, None, iterations=2)
-			#The dilatation makes the object in white bigger.And the erosion makes the object in white smaller.
-			#So overall no change after these two commands , check and see.
+			#Dilation after erosion is an opening process which is used for morphological noise removal.
+			#it removes small objects from the foreground and places them in background.this techniques used to find specific shapes in an image. 
+			
 			
 			#finding the contours with RED colour
 			self.cnts = cv2.findContours(self.thresh.copy(), cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
