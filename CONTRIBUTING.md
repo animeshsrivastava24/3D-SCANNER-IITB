@@ -25,5 +25,6 @@ The following is a set of guidelines for contributing to 3D-SCANNER and its pack
 
 [Additional Notes](#additional-notes)
   * [Issue and Pull Request Labels](#issue-and-pull-request-labels)
-  ## Code of Conduct
+## Code of Conduct
 
+This project and everyone participating in it is governed by the [3D-SCANNER Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [MAIL](mailto:animeshsri.nith@gmail.com).
