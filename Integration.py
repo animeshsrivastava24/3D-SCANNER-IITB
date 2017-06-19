@@ -11,6 +11,7 @@ import matplotlib
 from matplotlib import cm
 from matplotlib import pyplot as plt
 import os
+import SavePLY
 
 class Integration(): #a class is defined
 	
@@ -23,7 +24,7 @@ class Integration(): #a class is defined
 		
 	def ReadFile(self,folderpath):
 		os.chdir(folderpath)
-		for i in range(0,1024,4): #although we have 1024 frames, we are considering only 0,4,8....1024th frames only to limit the total number of points
+		for i in range(0,256): 
 			f=open(str(i)+'.txt','r')
 			data=f.read().split('\n\n')
 			data[0]=data[0][1:(len(data[0])-1)]
@@ -47,8 +48,8 @@ class Integration(): #a class is defined
 			self.theta.append(th) #append the values oh theta in self.theta
 			#self.X.append(Xcoordinate)
 			#self.Y.append(Ycoordinate)
-		for k in range(1024):
-			self.phi.append((0.3512)*k)
+		for k in range(256):
+			self.phi.append((0.02454)*k)
 			
 		print self.phi
 			
@@ -74,6 +75,7 @@ class Integration(): #a class is defined
 		
 		fig = plt.figure()
 		ax = fig.add_subplot(111, projection='3d')
+		SavePLY.SavePLY(X1,Y1,Z1)
 		ax.scatter(X1, Y1, Z1)
 		plt.show()
 		

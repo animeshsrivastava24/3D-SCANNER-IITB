@@ -23,6 +23,7 @@ import Integration
 
 #python inbuilt packages
 import Tkinter as tk
+import ttk
 import os
 import time
 import serial
@@ -50,7 +51,7 @@ class Root(): #A class called Root is defined
 		self.redup=255
 		self.greenlow=150
 		self.greenup=255
-		self.bluelow=235
+		self.bluelow=150
 		self.blueup=255
 
 	def setDeviceNumber(self,x): #callback function to set the VideoDeviceNumber 
@@ -65,6 +66,17 @@ class Root(): #A class called Root is defined
 		print "Opening Device Number:", self.VideoDeviceNumber #Prints a message about the selection of the camera by the user
 		self.CreateMainWindow() #The mainwindow is created again
 	
+	def ProgressbarWindow(self):
+		#self.pw=tk.Tk()
+		#self.pw.wm_title("Status")
+		self.ProgressVar = tk.DoubleVar() #here you have ints but when calc. %'s usually floats
+		self.TheLabel = tk.Label(self.root, text="Percentage completed")
+		self.TheLabel.pack()
+		self.progressbar = ttk.Progressbar(self.root, variable=self.ProgressVar, maximum=256)
+		self.progressbar.pack()
+		#self.pw.mainloop()
+
+	
 	def Capture(self): #callback function to start the rotation of the stepper motor and save the .png files and coordinates in .txt files
 		
 		self.FlagValue=1 #FlagValue is a flag that is turned 0 to stop the stepper and the saving of images and 1 to start
@@ -72,9 +84,13 @@ class Root(): #A class called Root is defined
 		self.FolderName=strftime("%Y-%m-%d %H:%M:%S", gmtime()) #string to store the folder name "<CurrentDate CurrentTime>"
 		os.mkdir('./'+self.FolderName) #creates a folder in the local directory
 		os.chdir('./'+self.FolderName) #changes the directory to the created directory
+		self.ProgressbarWindow()
+		
 	
 	def StopCapture(self):
 		self.FlagValue=0 # makes the flag value to 0 to stop the capturing of frames
+		self.progressbar.pack_forget()
+		self.TheLabel.pack_forget()
 			
 	def thread2(self):
 		self.th2=threading.Thread(target=self.Capture) #a thread is initiated to call the self.Capture() function
@@ -139,27 +155,27 @@ class Root(): #A class called Root is defined
 		self.button.pack() #Button is packed in right side
 		#variables to set the lower and the upper values of RGB are initialised
 		self.rlow=tk.StringVar(self.root)
-		self.rlow.set(230)
+		self.rlow.set(self.redlow)
 		self.entry_rlow=tk.Entry(self.root, textvariable=self.rlow)
 		self.entry_rlow.pack()
 		self.rup=tk.StringVar(self.root)
-		self.rup.set(255)
+		self.rup.set(self.redup)
 		self.entry_rup=tk.Entry(self.root, textvariable=self.rup)
 		self.entry_rup.pack()
 		self.glow=tk.StringVar(self.root)
-		self.glow.set(150)
+		self.glow.set(self.greenlow)
 		self.entry_glow=tk.Entry(self.root, textvariable=self.glow)
 		self.entry_glow.pack()
 		self.gup=tk.StringVar(self.root)
-		self.gup.set(255)
+		self.gup.set(self.greenup)
 		self.entry_gup=tk.Entry(self.root, textvariable=self.gup)
 		self.entry_gup.pack()
 		self.blow=tk.StringVar(self.root)
-		self.blow.set(150)
+		self.blow.set(self.bluelow)
 		self.entry_blow=tk.Entry(self.root, textvariable=self.blow)
 		self.entry_blow.pack()
 		self.bhigh=tk.StringVar(self.root)
-		self.bhigh.set(255)
+		self.bhigh.set(self.blueup)
 		self.entry_bhigh=tk.Entry(self.root, textvariable=self.bhigh)
 		self.entry_bhigh.pack()
 		self.SetButton=tk.Button(self.root, text="Set RGB Values", command=self.SetRGBValues) #Button is created 
@@ -171,7 +187,7 @@ class Root(): #A class called Root is defined
 		pg.display.set_mode((640,480), DOUBLEBUF|OPENGL|HWSURFACE|RESIZABLE) #refer to https://www.pygame.org/docs/ref/display.html
 		while 1:
 			_, self.frame = self.cap.read() #Read the video device input
-			#self.frame = cv2.flip(self.frame, 1) #This should be uncommented to get the miiror image of the actual frame
+			#self.frame = cv2.flip(self.frame, 1) #This should be uncommented to get the mirror image of the actual frame
 			self.lower = np.array([self.bluelow,self.greenlow,self.redlow]) #lower limit of BGR values of the laser line
 			self.upper= np.array([self.blueup,self.greenup,self.redup]) #upper limit of BGR values of the laser line
 			self.mask = cv2.inRange(self.frame, self.lower, self.upper) #create a mask within the specified values of RED
@@ -183,8 +199,7 @@ class Root(): #A class called Root is defined
 			self.thresh = cv2.threshold(self.gray, 45, 255, cv2.THRESH_BINARY)[1]
 			self.thresh = cv2.erode(self.thresh, None, iterations=2)
 			self.thresh = cv2.dilate(self.thresh, None, iterations=2)
-			#The dilatation makes the object in white bigger.And the erosion makes the object in white smaller.
-			#So overall no change after these two commands , check and see.
+			
 			#finding the contours with RED colour
 			self.cnts = cv2.findContours(self.thresh.copy(), cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
 			self.cnts = self.cnts[0] if imutils.is_cv2() else self.cnts[1]
@@ -198,16 +213,25 @@ class Root(): #A class called Root is defined
 			wall(self.im) #create the wall to be displayed in pygame
 			pg.display.flip()# Update the pygame display
 			
-			if (self.FlagValue==1 and self.FrameCount<1024):
+			if (self.FlagValue==1 and self.FrameCount<256):
 				ser=serial.Serial('/dev/'+self.Boards[self.BoardNumber-1], 9600) #open the serial port
 				ser.write(b'1') #write serial data
 				cv2.imwrite(str(self.FrameCount)+'.png',self.output_img) #save the .png image
-				time.sleep(0.01) #pause the code for 10ms
-				self.FrameCount+=1 #increase the frame counter
-			
-			elif (self.FlagValue==1 and self.FrameCount==1023): 
+				self.ProgressVar.set(self.FrameCount)
+				self.root.update_idletasks()
+				time.sleep(0.5) #pause the code for 10ms
+				'''while ser.inWaiting():
+					BytesAvailable=ser.inWaiting()
+					SerialReadData=ser.read(BytesAvailable)
+					if (SerialReadData=='./n'):
+						self.FrameCount+=1 #increase the frame counter'''
+				self.FrameCount+=1
+			elif (self.FlagValue==1 and self.FrameCount==256): 
 				self.FlagCount=0
 				self.FrameCount=0
+				self.progressbar.pack_forget()
+				self.TheLabel.pack_forget()
+				
 			self.root.update()# Update the Tk display
 	
 	def CreateMainWindow(self):

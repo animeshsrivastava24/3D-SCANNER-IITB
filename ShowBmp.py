@@ -9,7 +9,7 @@ import pygame, OpenGL
 from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
-import numpy
+from numpy import swapaxes
 
 def wall(image): #it creates the OpenGL texture that has to be displayed inside the pygame frame
 	glColor((1,1,1))
@@ -26,7 +26,7 @@ def wall(image): #it creates the OpenGL texture that has to be displayed inside 
 	glEnd()
 
 def ShowBmp(x):
-	pixl_arr = numpy.swapaxes(x, 0, 1) #the x and the y axes are swapped to make it compatible with pygame
+	pixl_arr = swapaxes(x, 0, 1) #the x and the y axes are swapped to make it compatible with pygame
 	new_surf = pygame.pixelcopy.make_surface(pixl_arr)
 	textureData = pygame.image.tostring(new_surf, "RGB", 1)
 	width = new_surf.get_width()
