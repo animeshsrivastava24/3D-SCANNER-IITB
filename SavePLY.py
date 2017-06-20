@@ -28,3 +28,4 @@ def SavePLY(X,Y,Z): #function for saving the .ply file
 		f.write(str(Y[i])+" ")
 		f.write(str(Z[i])+"\n")
 	f.close()
+""" Refer to https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/7.0-Generation-of-Ply-FIle-from-Co-ordinates-Of-a-Point-in-3D-Space for detail about code"""
