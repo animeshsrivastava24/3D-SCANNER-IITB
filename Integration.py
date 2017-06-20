@@ -84,5 +84,6 @@ class Integration(): #a class is defined
 '''Developed by team SAAS'''
 '''Ekalavya 2017'''
 '''IIT Bombay'''
-
+'''Click here https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/8.0-How-to-plot-the-points-to-generate-3D-cloud-point-taking-help-of-SavePLY-file-(Analysis-of-Code-of-Integration.ply)
+   to understand the above code'''
 		
