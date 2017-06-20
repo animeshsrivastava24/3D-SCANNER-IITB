@@ -3,11 +3,12 @@
 </p>
 
 # ABOUT:
-This a project of FOSSEE, IIT Bombay funded by MHRD, GoI under the guidance of Prof.D B Phatak(Patron),Rajesh Kushalkar(Project Manager, IDL, IIT Bombay) and Akshay Chipkar(Project Mentor).
+This a project of FOSSEE, IIT Bombay funded by MHRD, GoI under the guidance of Prof.D B Phatak(Patron), Mr.Rajesh Kushalkar(Project Manager, IDL, IIT Bombay) and Mr. Akshay Chipkar(Project Mentor).
 The project aims at developing open source hardware and software for 3D scanning of objects.
+The code for this project were written and tested on Ubuntu 14.04.5 with python as the primary programming language.
 
 # DESCRIPTION:
-The project is undertaken by four interns during the Summer of 2017 under the Ekalavya Summer Internship sponsored by the MHRD,India at Integrated Development Lab, Department of Computer Science and Engineering, IIT Bombay.
+The project was undertaken by four interns during the Summer of 2017 under the Ekalavya Summer Internship sponsored by the MHRD,India at Integrated Development Lab, Department of Computer Science and Engineering, IIT Bombay.
   ##  1. [Sagar Satapathy, NIT Rourkela](https://github.com/sagarbaba)
   ##  2. [Animesh Srivastava, NIT Hamirpur](https://github.com/animeshsrivastava24)
   ##  3. [Anchal Singh, NIT Uttarakhand](https://github.com/Anchalpanwar)
@@ -133,9 +134,15 @@ The project is undertaken by four interns during the Summer of 2017 under the Ek
        Obtaining models of deformed body parts for further research and analysis
   
 # CONTRIBUTING
+      Students, Developers and people working in the field of Computer Vision are encouraged to contribute to the repository. But they need to maintain the necessary APIs and code manerism for contributing to the code.
+      It is always a better practice to contact the developers by mail prior to contributing. 
+      Comments and associated documentation must be acutely maintained in case of any contribution.
+      The developers possess the sole right to reject any kind of contribution to the repository without prior information to the contributor.
+      Plagiarism is solely discouraged. The contributor needs to provide credits and cite the appropriate references.
 
 # CREDITS
+    The developers credit their entire project to their mentor Mr. Akshay Chipkar and their program head Prof D. B. Phatak.
+    The developer's team is also grateful to the Integrated Development Lab, KReSIT, IIT Bombay for providing them an opportunity to work on this project.
+    
 
-
-
-Copyright (c) 2017 Team SAAS , the above open source program codes were written and tested on Ubuntu 14.04.5
+Copyright (c) 2017 Team SAAS
