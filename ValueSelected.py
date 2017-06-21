@@ -2,7 +2,7 @@
 '''Developed by team SAAS'''
 '''Ekalavya 2017'''
 '''IIT Bombay'''
-
+#Bug 2.0 remove the 10 and 11 line
 
 #The necessary packages are imported
 from Tkinter import *
