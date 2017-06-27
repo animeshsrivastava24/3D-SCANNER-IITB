@@ -3,7 +3,8 @@
 '''Ekalavya 2017'''
 '''IIT Bombay'''
 '''This code is used to plot generate scatter plots from the txt files that the software makes'''
-
+'''The code is written to capture a frame from camera input and then parse it and then find it's respective X,Y and Z co-ordinate 
+points and plot it using matplotlib.pyplot as plt'''
 #import the necessary modules
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
