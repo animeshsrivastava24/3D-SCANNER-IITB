@@ -49,21 +49,15 @@ The project was undertaken by four interns during the Summer of 2017 under the E
       Focused Dot Width:
         < 2mm spotting 3 meters away
     
-  ### 1.3 Stepper Motor(28BYJ-48):
-      Rated voltage ： 5V DC
-      Number of Phase ： 4
-      Speed Variation Ratio ： 1/64
-      Stride Angle ： 5.625° /64
-      Frequency : 100Hz
-      DC resistance ： 200Ω±7%(25℃)
-      Idle In-traction Frequency : >600Hz
-      Idle Out-traction Frequency : >1000Hz
-      In-traction Torque : >34.3mN.m(120Hz)
-      Self-positioning Torque : >34.3mN.m
-      Friction torque : 800-1800 gf.cm
-      Pull in torque  : 450 gf.cm
-      Insulated resistance : >10MΩ(500V)
-  
+  ### 1.3 Stepper Motor(35 mm with 6 wires):
+      Operating voltage ： 5V or 12V (nominal 12V) DC
+      Step Angle ： 7.5°
+      Dimensions : Diameter 35mm * Thickness 15.3mm
+      Gear: 12 teeths, 0.5 modulus , copper gear,3mm Kong
+      Fixed Aperture : 3mm
+      Pitch :42mm
+      Motor Shaft Diameter : 3mm
+      Weight : 63.86gram
   ### 1.4 Current Amplifier IC(ULN2003)
   [ULN2003 Datasheet](http://www.seeedstudio.com/document/pdf/ULN2003%20Datasheet.pdf)
 
