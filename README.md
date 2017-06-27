@@ -133,12 +133,7 @@ The project was undertaken by four interns during the Summer of 2017 under the E
        Designing Remoulding Shoes
        Obtaining models of deformed body parts for further research and analysis
   
-# CONTRIBUTING
-      Students, Developers and people working in the field of Computer Vision are encouraged to contribute to the repository. But they need to maintain the necessary APIs and code manerism for contributing to the code.
-      It is always a better practice to contact the developers by mail prior to contributing. 
-      Comments and associated documentation must be acutely maintained in case of any contribution.
-      The developers possess the sole right to reject any kind of contribution to the repository without prior information to the contributor.
-      Plagiarism is solely discouraged. The contributor needs to provide credits and cite the appropriate references.
+
 
 # CREDITS
     The developers credit their entire project to their mentor Mr. Akshay Chipkar and their program head Prof D. B. Phatak.
