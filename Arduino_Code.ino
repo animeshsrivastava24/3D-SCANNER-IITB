@@ -31,7 +31,7 @@ void StepperStep()
     if (steps<48)
     {
       char data=Serial.read();
-      if (data=='1')
+      if (data=='1') // The arduino is controlled using Pyserial Command from Python GUI Window using Keypress 1
       {
         myStepper.step(1);
         delay(50);
