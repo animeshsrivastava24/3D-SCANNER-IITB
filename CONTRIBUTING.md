@@ -4,7 +4,7 @@
 
 The following is a set of guidelines for contributing to 3D-SCANNER and its packages, which are hosted in the [3D-SCANNER](https://github.com/animeshsrivastava24/3D-SCANNER-IITB) on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 #### Table Of Contents
-
+https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e).-Contributing
 [Code of Conduct](#code-of-conduct)
 
 [I don't want to read this whole thing, I just have a question!!!](#i-dont-want-to-read-this-whole-thing-i-just-have-a-question)
