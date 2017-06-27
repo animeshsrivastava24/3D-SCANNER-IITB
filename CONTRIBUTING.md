@@ -10,21 +10,21 @@ https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e).-Contributin
 [I don't want to read this whole thing, I just have a question!!!](#i-dont-want-to-read-this-whole-thing-i-just-have-a-question)
 
 [What should I know before I get started?](#what-should-i-know-before-i-get-started)
-  * [3D-SCANNER and Packages](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e)
-  * [3D-SCANNER Design Decisions](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e)
+  * [3D-SCANNER and Packages](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e).-Contributing)
+  * [3D-SCANNER Design Decisions](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e).-Contributing)
 
-[How Can I Contribute?](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e)
-  * [Reporting Bugs](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e)
-  * [Suggesting Enhancements](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e)
-  * [Your First Code Contribution](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e)
-  * [Pull Requests](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e)
+[How Can I Contribute?](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e).-Contributing)
+  * [Reporting Bugs](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e).-Contributing)
+  * [Suggesting Enhancements](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e).-Contributing)
+  * [Your First Code Contribution](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e).-Contributing)
+  * [Pull Requests](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e).-Contributing)
 
 [Styleguides](#styleguides)
-  * [Git Commit Messages](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e)
-  * [Documentation Styleguide](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e)
+  * [Git Commit Messages](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e).-Contributing)
+  * [Documentation Styleguide](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e).-Contributing)
 
-[Additional Notes](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e)
-  * [Issue and Pull Request Labels](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e)
+[Additional Notes](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e).-Contributing)
+  * [Issue and Pull Request Labels](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e).-Contributing)
 ## Code of Conduct
 
 This project and everyone participating in it are governed by the [3D-SCANNER Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
