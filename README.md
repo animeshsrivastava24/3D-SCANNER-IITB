@@ -11,7 +11,7 @@ The code for this project were written and tested on Ubuntu 14.04.5 with python 
 The project was undertaken by four interns during the Summer of 2017 under the Ekalavya Summer Internship sponsored by the MHRD,India at Integrated Development Lab, Department of Computer Science and Engineering, IIT Bombay.
   ##  1. [Sagar Satapathy, NIT Rourkela](https://github.com/sagarbaba)
   ##  2. [Animesh Srivastava, NIT Hamirpur](https://github.com/animeshsrivastava24)
-  ##  3. [Anchal Singh, NIT Uttarakhand](https://github.com/Anchalpanwar)
+  ##  3. [Anchal Singh Panwar, NIT Uttarakhand](https://github.com/Anchalpanwar)
   ##  4. [Soumya Sambit Rath, NIT Rourkela](https://github.com/ss-rath)
   
   
