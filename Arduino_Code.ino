@@ -14,6 +14,7 @@ void setup()
   pinMode(10,1);
   pinMode(11,1);
   Serial.begin(9600);
+  myStepper.setSpeed(10);
 }
 
 void StepCount()
