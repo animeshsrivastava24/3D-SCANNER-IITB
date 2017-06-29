@@ -6,7 +6,7 @@
 def SavePLY(X,Y,Z): #function for saving the .ply file
 	f=open("object.ply","w+") #a file is opened for writing
 	s=[]
-	for i in range(8):
+	for i in range(9):
 		s.append("0")
 	#the header of the ply file is defined
 	s[0]="ply"
@@ -16,7 +16,8 @@ def SavePLY(X,Y,Z): #function for saving the .ply file
 	s[4]="property float32 y"
 	s[5]="property float32 z"
 	s[6]="element face 0"
-	s[7]="end_header"
+	s[7]="property list uint8 int32 vertex_indices"
+	s[8]="end_header"
 
 	#the header for "object.ply" is written
 	for i in range(len(s)):
