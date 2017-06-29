@@ -92,4 +92,6 @@ for vert in tri.simplices:
     f.write("3 "+str(vert[0])+" ")
     f.write(str(vert[1])+" ")
     f.write(str(vert[2])+"\n")
-
+"""
+Link update : https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VI-b)-.-Analysis-of-PLY-file-with-Faces
+GO to the link for detailed info"""
