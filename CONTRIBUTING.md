@@ -11,7 +11,6 @@ https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki/VIII-e).-Contributin
 
 [What should I know before I get started?](#what-should-i-know-before-i-get-started)
   * [3D-SCANNER and Packages](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki)
-  * [3D-SCANNER Design Decisions](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki)
 
 [How Can I Contribute?](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki)
   * [Reporting Bugs](https://github.com/animeshsrivastava24/3D-SCANNER-IITB/wiki)
