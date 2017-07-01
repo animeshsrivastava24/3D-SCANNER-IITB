@@ -3,7 +3,7 @@
 </p>
 
 # ABOUT:
-This a project of FOSSEE, IIT Bombay funded by MHRD, GoI under the guidance of Prof.D B Phatak(Patron), Mr.Rajesh Kushalkar(Project Manager, IDL, IIT Bombay) and Mr. Akshay Chipkar(Project Mentor).
+3D Scanner is a project under FOSSEE, IIT Bombay funded by MHRD, GoI under the guidance of Prof.D B Phatak(Patron), Mr.Rajesh Kushalkar(Project Manager, IDL, IIT Bombay) and Mr. Akshay Chipkar(Project Mentor).
 The project aims at developing open source hardware and software for 3D scanning of objects.
 The code for this project were written and tested on Ubuntu 14.04.5 with python as the primary programming language.
 
