@@ -14,7 +14,7 @@ from About import * #local package
 from Root import * #local package
 
 AboutText = """
-This is a software where you can select the Video Device and get the output
+This is a software for taking the 3D Scan of an object
 Developed by Team SAAS, Ekalavya 2017, IITB"""
 
 

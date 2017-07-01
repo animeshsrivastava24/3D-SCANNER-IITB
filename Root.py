@@ -11,7 +11,6 @@ import pygame as pg
 from pygame.locals import *
 import numpy as np
 import cv2
-import Image, ImageTk
 import imutils
 import matplotlib.pyplot as plt
 
@@ -30,6 +29,10 @@ import serial
 import threading
 from time import gmtime, strftime
 
+def Show3D(x):
+		ScannedObject=Integration.Integration()
+		ScannedObject.ReadFile('./'+x)
+		ScannedObject.Plot3D()
 
 class Root(): #A class called Root is defined
 	
@@ -67,21 +70,19 @@ class Root(): #A class called Root is defined
 		self.CreateMainWindow() #The mainwindow is created again
 	
 	def ProgressbarWindow(self):
-		#self.pw=tk.Tk()
-		#self.pw.wm_title("Status")
+		
 		self.ProgressVar = tk.DoubleVar() #here you have ints but when calc. %'s usually floats
 		self.TheLabel = tk.Label(self.root, text="Percentage completed")
 		self.TheLabel.pack()
-		self.progressbar = ttk.Progressbar(self.root, variable=self.ProgressVar, maximum=256)
+		self.progressbar = ttk.Progressbar(self.root, variable=self.ProgressVar, maximum=48)
 		self.progressbar.pack()
-		#self.pw.mainloop()
 
 	
 	def Capture(self): #callback function to start the rotation of the stepper motor and save the .png files and coordinates in .txt files
 		
 		self.FlagValue=1 #FlagValue is a flag that is turned 0 to stop the stepper and the saving of images and 1 to start
 		self.FrameCount=0 #It is a counter variable used to count the number of frames captured
-		self.FolderName=strftime("%Y-%m-%d %H:%M:%S", gmtime()) #string to store the folder name "<CurrentDate CurrentTime>"
+		self.FolderName=strftime("%Y-%m-%d_%H:%M:%S", gmtime()) #string to store the folder name "<CurrentDate CurrentTime>"
 		os.mkdir('./'+self.FolderName) #creates a folder in the local directory
 		os.chdir('./'+self.FolderName) #changes the directory to the created directory
 		self.ProgressbarWindow()
@@ -89,6 +90,8 @@ class Root(): #A class called Root is defined
 	
 	def StopCapture(self):
 		self.FlagValue=0 # makes the flag value to 0 to stop the capturing of frames
+		self.FrameCount=0
+		os.chdir('../')
 		self.progressbar.pack_forget()
 		self.TheLabel.pack_forget()
 			
@@ -125,19 +128,35 @@ class Root(): #A class called Root is defined
 			self.Y.append(-int(temp[1]))	
 		f.write(str(self.X)+'\n\n')
 		f.write(str(self.Y)+'\n\n')
+		f.close()
 	
-	def SetRGBValues(self):
+	def SetRGBValues(self): #function to set the RGB values in the variables
 		self.redlow=int(self.rlow.get())
 		self.redup=int(self.rup.get())
 		self.greenlow=int(self.glow.get())
 		self.greenup=int(self.gup.get())
 		self.bluelow=int(self.blow.get())
-		self.blueup=int(self.bup.get())
+		self.blueup=int(self.bhigh.get())
 		
-	def Show3D(self):
-		ScannedObject=Integrate.Integrate()
-		ScannedObject.ReadFile('./'+self.FolderName)
-		ScannedObject.Plot3D()
+	def PlotPointCloud(self): #callback function to plot the point cloud
+		ScannedObject=Integration.Integration()
+		ScannedObject.ReadFile('./')
+		ScannedObject.CalculateXYZ()
+		ScannedObject.PlotScatter()
+		self.FlagValue=0 
+		self.FrameCount=0
+		os.chdir('../')
+		
+	
+	def PlotSurfacePlot(self): #callback function to plot the surface plot
+		ScannedObject=Integration.Integration()
+		ScannedObject.ReadFile('./')
+		ScannedObject.CalculateXYZ()
+		ScannedObject.PlotTrisurf()
+		self.FlagValue=0
+		self.FrameCount=0
+		os.chdir('../')
+	
 			
 	def ShowFrame(self):
 		try:
@@ -151,8 +170,11 @@ class Root(): #A class called Root is defined
 		self.button.pack() #Button is packed in left side
 		self.button=tk.Button(self.root, text="Stop Capturing" , command=self.StopCapture) #Button is created 
 		self.button.pack() #Button is packed in right side
-		self.button=tk.Button(self.root, text="Show 3D" , command=self.Show3D) #Button is created 
+		self.button=tk.Button(self.root, text="Plot Point Cloud" , command=self.PlotPointCloud) #Button is created 
 		self.button.pack() #Button is packed in right side
+		self.button=tk.Button(self.root, text="Plot Surface Plot" , command=self.PlotSurfacePlot) #Button is created 
+		self.button.pack() #Button is packed in right side
+		
 		#variables to set the lower and the upper values of RGB are initialised
 		self.rlow=tk.StringVar(self.root)
 		self.rlow.set(self.redlow)
@@ -185,6 +207,7 @@ class Root(): #A class called Root is defined
 		self.root.update() #the window is updated
 		pg.display.init()# Usual pygame initialization
 		pg.display.set_mode((640,480), DOUBLEBUF|OPENGL|HWSURFACE|RESIZABLE) #refer to https://www.pygame.org/docs/ref/display.html
+		
 		while 1:
 			_, self.frame = self.cap.read() #Read the video device input
 			#self.frame = cv2.flip(self.frame, 1) #This should be uncommented to get the mirror image of the actual frame
@@ -203,31 +226,32 @@ class Root(): #A class called Root is defined
 			#finding the contours with RED colour
 			self.cnts = cv2.findContours(self.thresh.copy(), cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
 			self.cnts = self.cnts[0] if imutils.is_cv2() else self.cnts[1]
-			#self.c=self.cnts[0]
+			
 			for i in range(len(self.cnts)):
 				self.c=self.cnts[i]
-				cv2.drawContours(self.output_img, [self.c], -1, (0, 255, 255), 2) #Draw all the contours with a blue background
+				cv2.drawContours(self.output_img, [self.c], -1, (0, 255, 255), 2) #Draw all the contours with a red background
 				if (self.FlagValue==1):
 						self.plot()	
 			self.im=ShowBmp(self.output_img) #process the output_img with OpenGL functions defined inside ShowBmp
 			wall(self.im) #create the wall to be displayed in pygame
 			pg.display.flip()# Update the pygame display
 			
-			if (self.FlagValue==1 and self.FrameCount<256):
+			if (self.FlagValue==1 and self.FrameCount<48):
 				ser=serial.Serial('/dev/'+self.Boards[self.BoardNumber-1], 9600) #open the serial port
 				ser.write(b'1') #write serial data
 				cv2.imwrite(str(self.FrameCount)+'.png',self.output_img) #save the .png image
 				self.ProgressVar.set(self.FrameCount)
 				self.root.update_idletasks()
-				time.sleep(0.5) #pause the code for 10ms
-				'''while ser.inWaiting():
+				time.sleep(0.3) #pause the code for 200ms
+				if ser.inWaiting():
 					BytesAvailable=ser.inWaiting()
 					SerialReadData=ser.read(BytesAvailable)
-					if (SerialReadData=='./n'):
-						self.FrameCount+=1 #increase the frame counter'''
-				self.FrameCount+=1
-			elif (self.FlagValue==1 and self.FrameCount==256): 
-				self.FlagCount=0
+					if (SerialReadData=='.'):
+						self.FrameCount+=1 #increase the frame counter
+						#print self.FrameCount
+				#self.FrameCount+=1
+			if (self.FlagValue==1 and self.FrameCount==48): 
+				self.FlagValue=0
 				self.FrameCount=0
 				self.progressbar.pack_forget()
 				self.TheLabel.pack_forget()
