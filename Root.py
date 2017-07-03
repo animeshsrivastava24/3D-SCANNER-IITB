@@ -95,9 +95,6 @@ class Root(): #A class called Root is defined
 		self.progressbar.pack_forget()
 		self.TheLabel.pack_forget()
 			
-	def thread2(self):
-		self.th2=threading.Thread(target=self.Capture) #a thread is initiated to call the self.Capture() function
-		self.th2.start() #the thread is started
 	
 	def plot(self):
 		#some local variables are created
