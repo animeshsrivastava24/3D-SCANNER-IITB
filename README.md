@@ -66,7 +66,7 @@ The project was undertaken by four interns during the Summer of 2017 under the E
   ### 2.1 Python 2.7
       Python was chosen as the default language for writing all the programs throughout the project. The version used by the developers was 2.7.6
       
-  ### 2.2 PyOpenGL 
+  ### 2.2 PyOpenGL 3.1.0
       PyOpenGL is the most common cross platform Python binding to OpenGL and related APIs. The binding is created using the standard ctypes library, and is provided under an extremely liberal BSD-style Open-Source license.
       Src: http://pyopengl.sourceforge.net/
       
@@ -74,15 +74,15 @@ The project was undertaken by four interns during the Summer of 2017 under the E
       OpenCV (Open Source Computer Vision Library) is released under a BSD license and hence it’s free for both academic     and commercial use. Written in optimized C/C++, the library can take advantage of multi-core processing.
       Src: http://opencv.org/
  
-  ### 2.4 Numpy 
+  ### 2.4 Numpy 1.13.0
       NumPy is the fundamental package for scientific computing with Python.Besides its obvious scientific uses, NumPy can also be used as an efficient multi-dimensional container of generic data. Arbitrary data-types can be defined. This allows NumPy to seamlessly and speedily integrate with a wide variety of databases.NumPy is licensed under the BSD license, enabling reuse with few restrictions.
       Src: http://www.numpy.org/
       
-  ### 2.5 Matplotlib
+  ### 2.5 Matplotlib 2.0.2
       Matplotlib is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms.
       Src: https://matplotlib.org/
       
-  ### 2.6 Pygame 
+  ### 2.6 Pygame 1.9.1
       Pygame is a cross-platform set of Python modules designed for writing video games. It includes computer graphics and sound libraries designed to be used with the Python programming language.
       It was used in the project for rendering the graphics in the display window.
       Src: https://www.pygame.org/news
@@ -95,12 +95,12 @@ The project was undertaken by four interns during the Summer of 2017 under the E
       The Python Imaging Library (PIL) adds image processing capabilities to your Python interpreter. This library supports many file formats, and provides powerful image processing and graphics capabilities. the version that was used is 1.1.7
       Src: http://www.pythonware.com/products/pil/
       
-  ### 2.9 Pyserial 
+  ### 2.9 Pyserial 2.6
       Python Serial Port Extension package
       Since a MicroController was used, this package was used for serial communications.
       Src: https://pypi.python.org/pypi/pyserial
   
-  ### 3.0 Arduino 
+  ### 3.0 Arduino UNO
       Arduino is open source platform . It consists of 3 parts- Arduino IDE, Arduino Development Board, Arduino Community
   
   ## 4. INSTALLATION:
