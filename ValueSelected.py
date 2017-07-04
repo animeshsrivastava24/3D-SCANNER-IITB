@@ -6,7 +6,6 @@
 
 #The necessary packages are imported
 from Tkinter import *
-import Image, ImageTk
 from Root import * #local package
 from Main import * #local package
 
